@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des membres</title>
+</head>
+<body>
+  <h1>Liste des membres</h1>
+  <a href="/">Retour accueil</a>
+  <br>
+  <a href="/bibliothecaire">Menu Bibliotheque</a>
+  <br><br>
+  <a href="/bibliothecaire/creer-membre/">Ajouter un membre</a>
+
+
+  {% for membre in membres %}
+    <p>
+      Nom : {{ membre.nom }}
+      <br>
+      Bloqué : {{ membre.bloque }}
+      <br>
+      <a href="/bibliothecaire/modifier-membre/{{ membre.id }}/">Modifier</a> |
+      <a href="/bibliothecaire/supprimer-membre/{{ membre.id }}/">Supprimer</a>
+    </p>
+  {% endfor %}
+</body>
+</html>

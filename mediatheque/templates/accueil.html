@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Médiathèque</title>
+</head>
+
+<body>
+
+<h1>Médiathèque Notre livre, notre média</h1>
+<h2>Accueil !</h2>
+
+<h3>Connexion Bibliothècaire</h3>
+<form method="post" action="/login-biblio/">
+    {% csrf_token %}
+    <p>
+        <input type="text" name="username" placeholder="Identifiant" required>
+    </p>
+    <p>
+        <input type="password" name="password" placeholder="Mot de passe" required>
+    </p>
+    <button type="submit">Accès</button>
+</form>
+
+<p>ID : admin  //  MDP : biblio41</p>
+
+<h3>Accès consultation</h3>
+<a href="/consultation/">Menu Membre</a>
+
+</body>
+
+</html>

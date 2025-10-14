@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des médias</title>
+</head>
+<body>
+    <h1>Liste des médias</h1>
+    <a href="/">Retour accueil</a>
+    <br><br>
+    <a href="/bibliothecaire/">Menu Bibliotheque</a>
+
+    <h2>Livres</h2>
+
+      {% for livre in livres %}
+        <p>
+          Titre : {{ livre.titre }} <br>
+          Auteur : {{ livre.auteur }} <br>
+          Disponible : {{ livre.disponible }} <br>
+          Emprunteur : {{ livre.emprunteur }} <br>
+          Date d'emprunt : {{ livre.dateEmprunt }}
+        </p>
+      {% endfor %}
+
+    <h2>DVDs</h2>
+
+      {% for dvd in dvds %}
+        <p>
+          Titre : {{ dvd.titre }} <br>
+          Réalisateur : {{ dvd.realisateur }} <br>
+          Disponible : {{ dvd.disponible }} <br>
+          Emprunteur : {{ dvd.emprunteur }} <br>
+          Date d'emprunt : {{ dvd.dateEmprunt }}
+        </p>
+      {% endfor %}
+
+    <h2>CDs</h2>
+      {% for cd in cds %}
+        <p>
+          Titre : {{ cd.titre }} <br>
+          Artiste : {{ cd.artiste }} <br>
+          Disponible : {{ cd.disponible }} <br>
+          Emprunteur : {{ cd.emprunteur }} <br>
+          Date d'emprunt : {{ cd.dateEmprunt }}
+        </p>
+      {% endfor %}
+
+    <h2>Jeux de plateau</h2>
+      {% for jeu in jeux %}
+        <p>
+          Titre : {{ jeu.titre }} <br>
+          Créateur : {{ jeu.createur }}
+        </p>
+      {% endfor %}
+
+
+</body>
+</html>

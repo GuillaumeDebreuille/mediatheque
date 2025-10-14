@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Créer un emprunt</title>
+</head>
+<body>
+    <h1>Créer un emprunt</h1>
+    <a href="/bibliothecaire/">Retour espace biblio</a>
+    <br><br>
+    {% if erreur %}
+        <p style="color: red;">{{ erreur }}</p>
+    {% endif %}
+        <a href="/bibliothecaire/">Retour espace biblio</a>
+    <br><br>
+
+    <h2>Emprunter un livre</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ livre_form.as_p }}
+        <button type="submit" name="emprunter_livre">Emprunter ce livre</button>
+    </form>
+    <hr>
+
+    <h2>Emprunter un DVD</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ dvd_form.as_p }}
+        <button type="submit" name="emprunter_dvd">Emprunter ce DVD</button>
+    </form>
+    <hr>
+
+    <h2>Emprunter un CD</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ cd_form.as_p }}
+        <button type="submit" name="emprunter_cd">Emprunter ce CD</button>
+    </form>
+</body>
+</html>

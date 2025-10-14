@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Retours d'emprunts</title>
+</head>
+<body>
+    <h1>Médias empruntés</h1>
+    <a href="/bibliothecaire/">Retour espace biblio</a>
+    <br><br>
+
+    <h2>Livres empruntés</h2>
+    {% for livre in livres %}
+        <p>
+        Titre : {{ livre.titre }} <br>
+        Auteur : {{ livre.auteur }} <br>
+        Emprunteur : {{ livre.emprunteur }} <br>
+        Date d'emprunt : {{ livre.dateEmprunt }} <br>
+        <form method="post" style="display:inline;">
+            {% csrf_token %}
+            <input type="hidden" name="livre_id" value="{{ livre.id }}">
+            <button type="submit" name="rendre_livre">Rendre ce livre</button>
+        </form>
+        </p>
+    {% endfor %}
+
+    <h2>DVDs empruntés</h2>
+    {% for dvd in dvds %}
+        <p>
+        Titre : {{ dvd.titre }} <br>
+        Réalisateur : {{ dvd.realisateur }} <br>
+        Emprunteur : {{ dvd.emprunteur }} <br>
+        Date d'emprunt : {{ dvd.dateEmprunt }} <br>
+        <form method="post" style="display:inline;">
+            {% csrf_token %}
+            <input type="hidden" name="dvd_id" value="{{ dvd.id }}">
+            <button type="submit" name="rendre_dvd">Rendre ce DVD</button>
+        </form>
+        </p>
+    {% endfor %}
+
+    <h2>CDs empruntés</h2>
+    {% for cd in cds %}
+        <p>
+        Titre : {{ cd.titre }} <br>
+        Artiste : {{ cd.artiste }} <br>
+        Emprunteur : {{ cd.emprunteur }} <br>
+        Date d'emprunt : {{ cd.dateEmprunt }} <br>
+        <form method="post" style="display:inline;">
+            {% csrf_token %}
+            <input type="hidden" name="cd_id" value="{{ cd.id }}">
+            <button type="submit" name="rendre_cd">Rendre ce CD</button>
+        </form>
+        </p>
+    {% endfor %}
+
+</body>
+</html>
